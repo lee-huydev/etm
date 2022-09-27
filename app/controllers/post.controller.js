@@ -67,6 +67,8 @@ class ProductsController {
          title: req.body.title,
          address: req.body.address,
          categories: req.body.categories,
+         status: req.body.status,
+         sale_or_rent: req.body.sale_or_rent,
          price: req.body.price,
          area: req.body.area,
          description: req.body.description,

@@ -13,6 +13,8 @@ const Posts = new mongoose.Schema({
    categories: { type: String, required: true },
    description: { type: String, required: true },
    price: { type: String, required: true },
+   status: {type: Boolean, required: true, default: false},
+   sale_or_rent: {type: String, required: true},
    area: { type: String, required: true },
    phoneNumber: { type: String, require: true },
    image: {
