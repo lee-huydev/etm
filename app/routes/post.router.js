@@ -8,8 +8,9 @@ router.post(
    postsController.middleWareAdmin,
    postsController.post
 );
-router.get('/relate', postsController.getPostRelate)
-router.get('/', postsController.index);
+router.get('/relate', postsController.getPostRelate);
+router.get('/', postsController.get);
+router.get('/10posts', postsController.index);
 router.get('/:_id', postsController.getById);
 router.put(
    '/:_id',
@@ -23,4 +24,5 @@ router.delete(
    postsController.middleWareAdmin,
    postsController.delete
 );
+router.put('/edit/switcherLatAndLong', postsController.switcherLatLong)
 module.exports = router;

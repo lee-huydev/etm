@@ -1,5 +1,6 @@
 const Posts = require('../../models/post.model');
 const jwt = require('jsonwebtoken');
+const News = require("../../models/news.model");
 class ProductsController {
    middlewareAuthor(req, res, next) {
       const token = req.headers.authorization && req.headers.authorization.split(' ')[1]
@@ -38,6 +39,15 @@ class ProductsController {
          page,
       });
    }
+   async get(req, res) {
+      try {
+         Posts.find({})
+             .then((news) => res.send(news))
+             .catch((error) => res.status(404).send(error));
+      } catch (error) {
+         res.status(404).send(error);
+      }
+   }
    getById(req, res) {
       const _id = req.params;
       Posts.find(_id)
@@ -66,6 +76,7 @@ class ProductsController {
          user: req.myJwt._id,
          title: req.body.title,
          address: req.body.address,
+         city: req.body.city,
          categories: req.body.categories,
          status: req.body.status,
          sale_or_rent: req.body.sale_or_rent,

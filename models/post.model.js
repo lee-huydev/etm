@@ -10,6 +10,7 @@ const Posts = new mongoose.Schema({
    user: { type: mongoose.Schema.Types.ObjectId, ref: 'Users' },
    title: { type: String, minLength: 50, maxLength: 255, required: true },
    address: { type: String, maxLength: 255, required: true },
+   city: { type: String, maxLength: 25, required: true},
    categories: { type: String, required: true },
    description: { type: String, required: true },
    price: { type: String, required: true },
