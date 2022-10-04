@@ -11,6 +11,7 @@ const port = process.env.PORT || 8000;
 const userRoutes = require('./app/routes/users.router');
 const postRoutes = require('./app/routes/post.router');
 const newsRoutes = require('./app/routes/news.router.js')
+const favoritesRoutes = require('./app/routes/favorites.router.js')
 //Middleware necessary
 dotenv.config();
 app.use(express.json());
@@ -28,7 +29,8 @@ db.connect();
 //Midleware router
 app.use('/api/v1/users', userRoutes);
 app.use('/api/v1/posts', postRoutes);
-app.use('/api/v1/news', newsRoutes)
+app.use('/api/v1/news', newsRoutes);
+app.use('/api/v1/favorites', favoritesRoutes);
 // Middleware error
 app.use(handleError);
 //

@@ -1,0 +1,8 @@
+- GET: Get all favorites => 'favorites/getAll'
+- GET: Get favorites of current user => 'favorites/', need jwt token
+- GET: Get posts that user liked by userID => 'favorites/getPosts?currentUserId=...'
+- GET: Get users have liked the post by postID 'favorites/getUsers?postId=...'
+- POST: Add new favorite => 'favorites/news', need jwt token, body: {postId: ...}
+- POST: Add new favorite for other user => 'favorites/newsAdmin', need jwt token + admin, body: {currentUserId: ..., postId: ...}
+- DELETE: Delete a favorite => 'favorites/delete', need jwt token, body: {postId: ...}
+- DELETE: Delete a favorite for other user => 'favorites/deleteAdmin/:_id' (_id: _id of favorites object item), need jwt token + admin
