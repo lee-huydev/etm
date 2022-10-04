@@ -24,5 +24,4 @@ router.delete(
    postsController.middleWareAdmin,
    postsController.delete
 );
-router.put('/edit/switcherLatAndLong', postsController.switcherLatLong)
 module.exports = router;
