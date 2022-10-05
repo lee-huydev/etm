@@ -12,8 +12,8 @@ class ProductsController {
       }
    }
    middleWareAdmin(req, res, next) {
-      const { admin, editor } = req.myJwt;
-      if (admin || editor) {
+      const { admin } = req.myJwt;
+      if (admin) {
          next();
       } else {
          res.status(401);
